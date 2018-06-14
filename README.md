@@ -32,4 +32,12 @@ O manuseio do supervisório é bem mais simples, a primeira tela é apenas uma t
 
 # 4. Desenvolvimento
 
-Para denselvolver o projeto, foram necessários os seguintes softwares: RSLinx, RSLogix, Elipse Software e além desses, foi necessário instalar os drivers para o conversor DB-9/USB (os instaladores encontram-se nessa pasta do GitHub, assim como os drivers do conversor). Depois de instalar todos os softwares, deve-se abrir o RSLinx e seguir o passo-a-passo descrito nesse tutorial (https://youtu.be/nk5KzV3UXA0).
+Para denselvolver o projeto, foram necessários os seguintes softwares: RSLinx, RSLogix, Elipse Software e além desses, foi necessário instalar os drivers para o conversor DB-9/USB (os instaladores encontram-se nessa pasta do GitHub, assim como os drivers do conversor). Depois de instalar todos os softwares, deve-se abrir o RSLinx e seguir o passo-a-passo descrito nesse tutorial (https://www.youtube.com/watch?v=nk5KzV3UXA0).
+
+
+Após o RSLinx configurado, incluir o driver DF-1 no elipse e colocá-lo com as mesmas configurações que o RSLinx auto-configurou através da porta COM selecionada (foto 19 - configuração do driver DF-1 no elipse). Como não é possível acionar uma entrada pelo supervisório, é necessário criar um bit em paralelo (foto 20 - inserção do bit auxiliar no código do CLP) ao código do CLP para bypassar o comando vindo da bancada. Dessa forama conseguimos acionar o bit via supervisório e acionar qualquer saída via sistema SCADA (foto 21 - tags e endereços de tags necessários para a comunicação). Para acionar uma saída do supervisório, foi feita uma associação digital com o bit relacionado àquela saída que devemos acionar (foto 22 - associação dos bits entre CLP e SCADA).
+
+
+# 5. Conclusão
+
+Os pré-requesitos do trabalho foram amplamente solucionados. Para um melhor desenolvimento de um supervisório, faltam apenas escrita em um banco de dados, e consulta no mesmo banco de dados. Dessa forma o usuário pode ter o total controle, supervisão e aqusição de dados da produção/aplicação.
